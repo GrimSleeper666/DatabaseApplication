@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DatabaseApplication</string>
+    <string name="restaurant_name_label">Restaurant Name</string>
+    <string name="save">Save</string>
+    <string name="add_restaurant_btn_label">Add Restaurant</string>
+</resources>
