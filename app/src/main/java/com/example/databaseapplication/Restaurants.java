@@ -36,7 +36,7 @@ public class Restaurants extends AppCompatActivity {
                 values.put("name",rName.getText().toString());
 
                 Long id = db.addRestaurant(values);
-                Intent intent = new Intent(getApplicationContext(),Reviews.class);
+                Intent intent = new Intent(getApplicationContext(),DisplayDatabase.class);
                 intent.putExtra("ID",id);
                 startActivity(intent);
 

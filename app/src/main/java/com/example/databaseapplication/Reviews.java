@@ -2,8 +2,11 @@ package com.example.databaseapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Reviews extends AppCompatActivity {
@@ -13,14 +16,20 @@ public class Reviews extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         DatabaseHelper db = new DatabaseHelper(this);
         setContentView(R.layout.activity_reviews);
-        Long restaurantID = getIntent().getLongExtra("ID",0);
-        Cursor restaurant = db.findRestaurant(Integer.valueOf(restaurantID.intValue()));
 
-        restaurant.moveToFirst();
 
-        String name = restaurant.getString(1);
-        TextView label = findViewById(R.id.review_restauant_name_label);
-        label.setText(name);
+        Button viewBtn = findViewById(R.id.viewButton);
+
+        viewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),DisplayDatabase.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
     }
 }
